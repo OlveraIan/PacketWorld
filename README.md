@@ -316,19 +316,22 @@ Cancelado = El envio ha sido cancelado. La razon se especifica en el log. Este e
 Cuando se llega a un estado final no es posible alterar los datos del envio pero todavia es posible leerlos.
 
 Transiciones:
-Un envio puede empezar con estado "Detenido" o "Recibido en sucursal"
-"Recibido en sucursal" debe pasar a "En transito"
-"Detenido" debe pasar a "Procesado"
-"Procesado" debe pasar a "En transito"
-"En transito" puede pasar a "Entregado" o "Detenido"
-"Entregado" no cambia de estado
-"Cancelado" no cambia de estado
+Un envio puede empezar con estado "Detenido" o "Recibido en sucursal".
+
+"Recibido en sucursal" debe pasar a -> "En transito".
+"Detenido" debe pasar a -> "Procesado".
+"Procesado" debe pasar a -> "En transito".
+"En transito" puede pasar a -> "Entregado" o "Detenido".
+
+"Entregado" no cambia de estado.
+"Cancelado" no cambia de estado.
+
 Exceptuando los estados finales, todos los demas estados pueden pasar a "Cancelado"
 
-TTL de envios cancelados:
+**TTL de envios cancelados**:
 El tiempo de vida de la vista de los envios cancelados sera de 7 dias. Esta regla solo aplica para el conductor. Esto quiere decir que un conductor solo podra ver en su lista de envios asignados, envios cancelados de hasta 7 dias.
 
-Manejo de envios cancelados:
+**Manejo de envios cancelados**:
 Cuando el envio es cancelado se maneja de distinta forma dependiendo de quien haga la cancelacion.
 Cuando un cliente decide cancelar su envio tiene que hacerlo a traves del ejecutivo de la tienda. En este caso el log finaliza abrubtamente en la decision hasta donde quedo. Por ejemplo, si el envio estaba en transito, la siguiente entrada en el log sera el de estado cancelado y no se podra modificar.
 Un conductor puede decidir cancelar el envio si considera que es imposible realizar el envio (cuando es peligroso o la direccion no existe ya), o si ha sido autorizado a cancelarlo (quizas despues de varios intentos fallidos). Cuando esto pasa el log finaliza abruptamente hasta donde quedo, ahora con el estado de cancelado y sin poder modificarse nuevamente. La ultima entrada que aparecera en el log es la cancelacion
