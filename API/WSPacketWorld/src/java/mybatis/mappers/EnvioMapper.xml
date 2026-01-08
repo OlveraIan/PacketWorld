@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="envios">
+
+    <select id="consultarEnvio" resultType="pojo.Envio">
+
+        SELECT * FROM Envio WHERE numGuia = #{numGuia};
+
+    </select>
+
+    <select id="consultarEnvios" resultType="pojo.Envio">
+        
+        SELECT * FROM Envio;
+
+    </select>
+    
+    <insert id="registrarEnvio" parameterType="pojo.Envio">
+        
+        INSERT INTO Envio (idCliente, costo, numGuia, idOrigen, idDestino, idEstatus, curp) 
+        VALUES(#{idCliente},#{costo},#{numGuia},#{idOrigen},#{idDestino},#{idEstatus},#{curp})
+                
+    </insert>
+
+
+    <update id="actualizarEnvio" parameterType="pojo.Envio">
+
+        UPDATE envio
+        SET 
+        idCliente = #{idCliente},
+        costo = #{costo},
+        idDestino = #{idDestino},
+        idOrigen = #{idOrigen},
+        curp = #{curp}
+    
+        WHERE numGuia = #{numGuia}
+
+    </update>
+
+</mapper>
+
