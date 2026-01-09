@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import java.net.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" centerShape="false" prefHeight="1080.0" prefWidth="1920.0" scaleShape="false" styleClass="background" stylesheets="@recursos/EstiloPacketWorld.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="packetworldjavafx.FXMLLoginController">
+    <children>
+      <VBox alignment="CENTER" layoutX="466.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="1080.0" layoutX="466.0" stroke="BLACK" strokeType="INSIDE" styleClass="pane" width="1000.0" />
+         </children>
+      </VBox>
+       
+                                           <VBox alignment="CENTER" layoutX="590.0" layoutY="634.0" prefHeight="258.0" prefWidth="779.0" spacing="15">
+          <children>
+            <TextField fx:id="tfNumeroPersonal" prefHeight="55.0" prefWidth="351.0" promptText="Numero de personal" styleClass="textfield">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+               <Label fx:id="lbErrorPersonal" textFill="RED" />
+            <PasswordField fx:id="tfContrasena" prefHeight="51.0" prefWidth="373.0" promptText="Contraseña" styleClass="textfield">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </PasswordField>
+                 <Label fx:id="lbErrorPassword" textFill="RED" />
+              <Button defaultButton="true" onAction="#btnLogin" prefHeight="60.0" text="Iniciar Sesion" textAlignment="CENTER" />
+          </children>
+       </VBox>
+      <ImageView fitHeight="505.0" fitWidth="786.0" layoutX="593.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@recursos/PacketWorld_HD.png" />
+         </image>
+      </ImageView>
+      <Pane prefHeight="61.0" prefWidth="1761.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1771.0" layoutY="13.0" onMouseClicked="#cerrarVentana" prefHeight="60.0" prefWidth="135.0" styleClass="t1-slim" text="SALIR" textAlignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Label>
+         </children></Pane>
+   </children>
+  </AnchorPane>

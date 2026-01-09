@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="42.428043mm"
+   height="42.450195mm"
+   viewBox="0 0 42.428045 42.450195"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="PW.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   inkscape:export-filename="PW_HD_BG_TRANSPARENTE.png"
+   inkscape:export-xdpi="600"
+   inkscape:export-ydpi="600"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.5529032"
+     inkscape:cx="173.54591"
+     inkscape:cy="140.7042"
+     inkscape:window-width="1554"
+     inkscape:window-height="981"
+     inkscape:window-x="185"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="powerclip"
+       id="path-effect6"
+       is_visible="true"
+       lpeversion="1"
+       inverse="true"
+       flatten="false"
+       hide_clip="false"
+       message="Utilice la regla de relleno parimpar en el diálogo &lt;b&gt;Relleno y borde&lt;/b&gt; si el resultado no está aplanada después de convertir el recorte en trayectos." />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath2">
+      <path
+         id="path2"
+         style="display:inline;fill:#ffffff;stroke-width:5.15821"
+         d="m 88.680031,48.993645 c 0,0 -9.12484,-0.100339 -19.596967,-0.06526 v 42.429903 c 11.475445,0.0041 19.596967,-0.07235 19.596967,-0.07235 z" />
+    </clipPath>
+    <filter
+       id="mask-powermask-path-effect6_inverse"
+       inkscape:label="filtermask-powermask-path-effect6"
+       style="color-interpolation-filters:sRGB"
+       height="100"
+       width="100"
+       x="-50"
+       y="-50">
+      <feColorMatrix
+         id="mask-powermask-path-effect6_primitive1"
+         values="1"
+         type="saturate"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         id="mask-powermask-path-effect6_primitive2"
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0 "
+         in="fbSourceGraphic" />
+    </filter>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath6">
+      <path
+         d="M 101.07295,75.084605 98.348396,91.371138 H 97.634828 L 92.877677,71.874117 q -0.324351,-1.371145 -0.670325,-1.605243 -0.324351,-0.26754 -1.816366,-0.26754 v -0.334426 h 7.395205 v 0.334426 q -1.319027,0 -1.837986,0.234098 -0.497339,0.200654 -0.497339,0.836064 0,0.334425 0.129742,0.802621 l 3.351626,14.012439 1.967726,-11.638015 -0.45409,-2.374424 q -0.25948,-1.337703 -0.627081,-1.605243 -0.367596,-0.26754 -1.881232,-0.26754 v -0.334426 h 7.373573 v 0.334426 q -1.31903,0 -1.83799,0.234098 -0.49733,0.200654 -0.49733,0.902949 0,0.367868 0.0865,0.735736 l 2.78942,14.045883 2.4002,-10.400642 q 0.36759,-1.638686 0.36759,-2.675405 0,-2.842619 -2.59481,-2.842619 v -0.334426 h 5.55722 v 0.334426 q -1.53526,0 -2.27046,2.441308 -0.10811,0.367868 -0.80007,3.277371 l -3.54623,15.651125 h -0.69195 z"
+         id="path6"
+         style="font-size:26.8913px;font-family:'Modern No. 20';-inkscape-font-specification:'Modern No. 20, ';display:none;fill:#ffffff;stroke-width:1.46368"
+         aria-label="W" />
+      <path
+         id="lpe_path-effect6"
+         style="font-size:26.8913px;font-family:'Modern No. 20';-inkscape-font-specification:'Modern No. 20, ';fill:#ffffff;stroke-width:1.46368"
+         class="powerclip"
+         d="M 85.390518,64.732254 H 116.59455 V 96.354979 H 85.390518 Z m 15.682432,10.352351 3.20027,16.286533 h 0.69195 l 3.54623,-15.651125 q 0.69196,-2.909503 0.80007,-3.277371 0.7352,-2.441308 2.27046,-2.441308 v -0.334426 h -5.55722 v 0.334426 q 2.59481,0 2.59481,2.842619 0,1.036719 -0.36759,2.675405 L 105.85173,85.92 103.06231,71.874117 q -0.0865,-0.367868 -0.0865,-0.735736 0,-0.702295 0.49733,-0.902949 0.51896,-0.234098 1.83799,-0.234098 v -0.334426 h -7.373573 v 0.334426 q 1.513636,0 1.881232,0.26754 0.367601,0.26754 0.627081,1.605243 l 0.45409,2.374424 -1.967726,11.638015 -3.351626,-14.012439 q -0.129742,-0.468196 -0.129742,-0.802621 0,-0.63541 0.497339,-0.836064 0.518959,-0.234098 1.837986,-0.234098 v -0.334426 h -7.395205 v 0.334426 q 1.492015,0 1.816366,0.26754 0.345974,0.234098 0.670325,1.605243 l 4.757151,19.497021 h 0.713568 z" />
+    </clipPath>
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-69.185336,-48.920944)">
+    <path
+       style="fill:#0000ff;fill-opacity:1;stroke-width:2.765"
+       id="path1"
+       d="M 90.541002,91.354744 A 21.214285,21.214285 0 0 1 69.185825,70.285041 21.214285,21.214285 0 0 1 90.252781,48.927153 21.214285,21.214285 0 0 1 111.61338,69.991362 L 90.39962,70.14093 Z"
+       clip-path="url(#clipPath2)" />
+    <path
+       style="fill:#800000;fill-opacity:1;stroke-width:2.765"
+       id="path1-6"
+       d="M 90.396484,48.930696 A 21.214285,21.214285 0 0 1 111.61024,69.995413 L 90.396484,70.144981 Z" />
+    <path
+       style="fill:#ff0000;fill-opacity:1;stroke-width:2.02953"
+       id="path1-6-1"
+       d="M 90.401398,54.156904 A 15.571451,15.571451 0 0 1 105.97283,69.70568 l -15.571432,0.02267 z" />
+    <path
+       style="fill:#ffff00;fill-opacity:1;stroke-width:1.2545"
+       id="path1-6-1-6"
+       d="m 90.390587,60.153438 a 9.6250658,9.6250658 0 0 1 9.624823,9.557205 l -9.624823,0.06786 z" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke-width:2.7045"
+       id="rect1"
+       width="21.204035"
+       height="21.622725"
+       x="90.390518"
+       y="69.732254"
+       clip-path="url(#clipPath6)"
+       inkscape:path-effect="#path-effect6"
+       sodipodi:type="rect"
+       d="M 90.390518,69.732254 H 111.59455 V 91.354979 H 90.390518 Z" />
+    <rect
+       style="display:inline;fill:#000000;fill-opacity:1;stroke-width:4.96671"
+       id="rect5"
+       width="21.21459"
+       height="1.3124974"
+       x="90.391052"
+       y="69.665718" />
+    <rect
+       style="display:inline;fill:#000000;fill-opacity:1;stroke-width:4.95028"
+       id="rect5-9"
+       width="21.074446"
+       height="1.3124974"
+       x="90.516846"
+       y="90.041473" />
+  </g>
+</svg>

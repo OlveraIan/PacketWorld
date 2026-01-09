@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="unidad">
+
+    <insert id="insertar" parameterType="pojo.peticion.CrearUnidadPeticion" statementType="CALLABLE">
+        {CALL SP_REGISTRAR_UNIDAD(
+            #{marca, mode=IN, jdbcType=VARCHAR},
+            #{modelo, mode=IN, jdbcType=VARCHAR},
+            #{anio, mode=IN, jdbcType=INTEGER},
+            #{vin, mode=IN, jdbcType=CHAR},
+            #{tipoPropulsion, mode=IN, jdbcType=INTEGER}
+        )}
+    </insert>
+
+    <update id="editarUnidad" statementType="CALLABLE">
+        {CALL SP_EDITAR_UNIDAD(
+            #{idInterno, mode=IN, jdbcType=VARCHAR},
+            #{marca, mode=IN, jdbcType=VARCHAR},
+            #{modelo, mode=IN, jdbcType=VARCHAR},
+            #{anio, mode=IN, jdbcType=INTEGER},
+            #{idPropulsion, mode=IN, jdbcType=INTEGER}
+        )}
+    </update>
+
+    <delete id="darBajaUnidad" statementType="CALLABLE">
+        {CALL SP_CAMBIAR_ESTADO_UNIDAD(
+            #{idInterno, mode=IN, jdbcType=VARCHAR},
+            #{idEstado, mode=IN, jdbcType=INTEGER},
+            #{razon, mode=IN, jdbcType=LONGVARCHAR}
+        )}
+    </delete>
+
+    <select id="obtenerUnidad" resultType="pojo.Unidad" statementType="CALLABLE">
+        {CALL SP_BUSCAR_UNIDAD(
+            #{idInterno, mode=IN, jdbcType=VARCHAR},
+            #{vin, mode=IN, jdbcType=VARCHAR},
+            #{marca, mode=IN, jdbcType=VARCHAR}
+        )}
+    </select>
+    
+    <update id="asignarConductor" statementType="CALLABLE">
+        {CALL sp_asignar_unidad_conductor(
+            #{idInterno, mode=IN, jdbcType=VARCHAR},
+            #{numLicencia, mode=IN, jdbcType=VARCHAR}
+        )}
+    </update>
+
+    <update id="desasignarConductor" statementType="CALLABLE">
+        {CALL sp_desasignar_unidad(
+            #{idInterno, mode=IN, jdbcType=VARCHAR}
+        )}
+    </update>
+    <select id="todos" resultType="pojo.Cliente">
+        SELECT * FROM vw_clientes_detalle WHERE activo = 0;
+    </select>
+</mapper>

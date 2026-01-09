@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="230.0" prefWidth="551.0" styleClass="pane" stylesheets="@recursos/EstiloPacketWorld.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="desktop.FXMLAsignarCoductorEnvioController">
+   <children>
+      <VBox alignment="CENTER" layoutX="2.0" layoutY="14.0" prefHeight="200.0" prefWidth="549.0" spacing="20.0">
+         <children>
+            <Label styleClass="t2" text="SELECCIONA AL CONDUCTOR" />
+            <ComboBox fx:id="cbConductores" prefHeight="31.0" prefWidth="347.0" />
+            <HBox alignment="TOP_CENTER" prefHeight="52.0" prefWidth="549.0" spacing="20.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#salirPantalla" text="CANCELAR" />
+                  <Button mnemonicParsing="false" onAction="#btnAsignarConductor" styleClass="boton-guardar" text="ASIGNAR CONDUCTOR" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

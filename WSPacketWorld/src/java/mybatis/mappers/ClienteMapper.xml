@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cliente">
+    <insert id="insertarCliente" parameterType="pojo.peticion.ClientePeticion" statementType="CALLABLE">
+        {CALL SP_REGISTRAR_CLIENTE(
+            #{nombre, mode=IN, jdbcType=VARCHAR}, 
+            #{apellidoPaterno, mode=IN, jdbcType=VARCHAR}, 
+            #{apellidoMaterno, mode=IN, jdbcType=VARCHAR}, 
+            #{curp, mode=IN, jdbcType=VARCHAR}, 
+            #{correo, mode=IN, jdbcType=VARCHAR}, 
+            #{password, mode=IN, jdbcType=VARCHAR}, 
+            #{idRol, mode=IN, jdbcType=INTEGER},
+            #{idSucursal, mode=IN, jdbcType=INTEGER},
+            #{foto, mode=IN, jdbcType=BLOB},
+            #{numLicencia, mode=IN, jdbcType=VARCHAR}
+        )}
+    </insert>
+    
+    <update id="editarCliente" statementType="CALLABLE">     
+        {CALL SP_EDITAR_CLIENTE(
+            #{nombre, mode=IN, jdbcType=VARCHAR},
+            #{apellidoPaterno, mode=IN, jdbcType=VARCHAR},
+            #{apellidoMaterno, mode=IN, jdbcType=VARCHAR},
+            #{correo, mode=IN, jdbcType=VARCHAR},
+            #{telefono, mode=IN, jdbcType=VARCHAR},
+            #{calle, mode=IN, jdbcType=VARCHAR},
+            #{numero, mode=IN, jdbcType=INTEGER},
+            #{colonia, mode=IN, jdbcType=VARCHAR},
+            #{codigoPostal, mode=IN, jdbcType=VARCHAR}
+        )}
+    </update>
+    
+    <delete id="eliminarCliente" statementType="CALLABLE">
+        {CALL SP_ELIMINAR_CLIENTE(
+            #{correo, mode=IN, jdbcType=VARCHAR}
+        )}
+    </delete>
+    
+    <select id="obtenerCliente" resultType="pojo.Cliente" statementType="CALLABLE">
+        {CALL SP_BUSCAR_CLIENTE(
+            #{nombre, mode=IN, jdbcType=VARCHAR},
+            #{numeroTelefono, mode=IN, jdbcType=VARCHAR},
+            #{correo, mode=IN, jdbcType=VARCHAR}
+        )}       
+    </select> 
+    <select id="todos" resultType="pojo.Cliente">
+        SELECT * FROM vw_clientes_detalles WHERE activo = 1;
+    </select>
+</mapper>

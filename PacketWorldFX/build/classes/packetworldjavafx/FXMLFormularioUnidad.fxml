@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="348.0" prefWidth="501.0" styleClass="background" stylesheets="@recursos/EstiloPacketWorld.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="desktop.FXMLFormularioUnidadController">
+   <children>
+      <Pane layoutX="12.0" layoutY="58.0" prefHeight="212.0" prefWidth="477.0" styleClass="pane">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="509.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="483.0" spacing="20.0">
+                     <children>
+                        <VBox prefHeight="60.0" prefWidth="155.0">
+                           <children>
+                              <Label styleClass="texto-normal" text="Marca" />
+                              <TextField fx:id="tfMarca" prefHeight="31.0" prefWidth="134.0" styleClass="textfield" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="97.0" prefWidth="155.0">
+                           <children>
+                              <Label styleClass="texto-normal" text="Modelo" />
+                              <TextField fx:id="tfModelo" prefHeight="31.0" prefWidth="134.0" styleClass="textfield" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="60.0" prefWidth="67.0">
+                           <children>
+                              <Label styleClass="texto-normal" text="Año" />
+                              <TextField fx:id="tfAño" prefHeight="31.0" prefWidth="134.0" styleClass="textfield" />
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="483.0" spacing="20.0">
+                     <children>
+                        <VBox prefHeight="60.0" prefWidth="108.0">
+                           <children>
+                              <Label styleClass="texto-normal" text="Tipo de unidad" />
+                              <ComboBox fx:id="cbTipo" prefHeight="43.0" prefWidth="108.0" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="60.0" prefWidth="244.0">
+                           <children>
+                              <Label styleClass="texto-normal" text="Numero de identificacion vehicular" />
+                              <TextField fx:id="tfVin" prefHeight="31.0" prefWidth="247.0" styleClass="textfield" />
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+      <Label layoutX="16.0" styleClass="t1-slim" text="UNIDAD">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnEditar" layoutX="232.0" layoutY="286.0" mnemonicParsing="false" onAction="#irEditar" prefHeight="29.0" prefWidth="108.0" styleClass="boton-editar" text="EDITAR" />
+      <Button fx:id="btnGuardar" layoutX="361.0" layoutY="286.0" mnemonicParsing="false" onAction="#irGuardar" styleClass="boton-guardar" text="CONFIRMAR" />
+   </children>
+</AnchorPane>

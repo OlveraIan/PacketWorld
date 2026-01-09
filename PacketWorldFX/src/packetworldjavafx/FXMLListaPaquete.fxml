@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="331.0" prefWidth="855.0" styleClass="background" stylesheets="@recursos/EstiloPacketWorld.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="desktop.FXMLListaPaqueteController">
+   <children>
+      <Label graphicTextGap="8.0" layoutX="14.0" layoutY="14.0" prefHeight="58.0" prefWidth="219.0" styleClass="t1-slim" text="PAQUETES" />
+      <ScrollPane hbarPolicy="NEVER" layoutX="1.0" layoutY="72.0" prefHeight="186.0" prefViewportHeight="184.0" prefViewportWidth="700.0" prefWidth="854.0">
+         <content>
+            <TableView fx:id="tvPaquete" layoutX="10.0" layoutY="135.0" prefHeight="184.0" prefWidth="855.0" styleClass="pane" AnchorPane.leftAnchor="10.0">
+              <columns>
+                <TableColumn fx:id="tcDescripcion" prefWidth="224.0" text="Descripcion " />
+                <TableColumn fx:id="tcPeso" prefWidth="107.0" text="Peso (Kg) " />
+                  <TableColumn fx:id="tcAlto" prefWidth="103.0" text="Alto" />
+                  <TableColumn fx:id="tcAncho" prefWidth="96.0" text="Ancho" />
+                  <TableColumn fx:id="tcProfundidad" prefWidth="138.0" text="Produndidad " />
+                  <TableColumn fx:id="tcNumeroGuia" prefWidth="186.0" text="Numero Guia" />
+              </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+      <HBox alignment="CENTER" layoutX="1.0" layoutY="258.0" prefHeight="82.0" prefWidth="854.0" spacing="20.0">
+         <children>
+            <Button fx:id="btnEditar" mnemonicParsing="false" onAction="#abrirFormularioPaquete" styleClass="boton-editar" text="EDITAR" />
+            <Button mnemonicParsing="false" onAction="#eliminarPaquete" styleClass="boton-elminar" text="ELIMINAR" />
+            <Button mnemonicParsing="false" onAction="#cambiarPantallaRegistro" styleClass="boton-guardar" text="AÑADIR PAQUETE" />
+         </children>
+      </HBox>
+      <Button layoutX="745.0" layoutY="14.0" mnemonicParsing="false" text="REGRESAR" />
+   </children>
+</AnchorPane>

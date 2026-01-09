@@ -1,0 +1,88 @@
+@font-face{
+    font-family:'RodinPro'; 
+    src: url('/fonts/RodinProDB.otf'); 
+}
+body{
+    font-family:'RodinPro',sans-serif;
+    color:#312E25;
+}
+.btn{
+    margin-top: 5%;
+    width: 100%;
+}
+
+form{
+    width: 300px; 
+    background-color: #DDD8C7;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+input{
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 0.2px solid lightgrey;
+}
+
+.logoPWHome{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    padding-top: 5%;
+    padding-bottom: 20px;
+}
+
+
+h3{
+    margin-left: 26%;
+    margin-top: 10%;
+    display: inline-block;
+    horizontal-align: top
+}
+
+.contenedor{
+    margin-left:30%;
+}
+
+.paquetes-titulo{
+    margin-top:5%;
+    margin-left: 40%;
+}
+
+.historial-titulo{
+    margin-top: 5%;
+    margin-left: 40%;
+}
+
+.table{
+    background-color: #DDD8C7;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+.table-primary{
+    background-color: #312E25;
+    
+}
+th{
+    color: white;
+}
+
+.contenedor{
+    max-width: 600px;
+    padding: 20px;
+    background-color: #DDD8C7;
+    box-shadow: 0 4px 8px rgba(233, 233, 233, 0.2);
+    text-align: center;
+}
+
+.informacion{
+    margin-top: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+    border-top: 1px solid #dddddd;
+    padding-top: 10px;
+}

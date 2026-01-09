@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="1080.0" prefWidth="1920.0" styleClass="background" stylesheets="@recursos/EstiloPacketWorld.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="packetworldjavafx.FXMLHomeAdminController">
+   <children>
+      <TabPane layoutY="80.0" prefHeight="1000.0" prefWidth="1920.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab onSelectionChanged="#cambioTabInicio" text="INICIO">
+            <content>
+              <AnchorPane id="Inicio" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="pane" />
+            </content>
+          </Tab>
+          <Tab onSelectionChanged="#cambioTabColaboradores" text="COLABORADORES">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #DDD8C7;" styleClass="pane">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" layoutX="471.0" layoutY="2.0" prefHeight="60.0" prefWidth="476.0" spacing="20.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#clickBuscarColab" prefHeight="50.0" prefWidth="130.0" text="BUSCAR" />
+                              <Button mnemonicParsing="false" onAction="#clickEditarColab" prefHeight="50.0" prefWidth="130.0" text="EDITAR" />
+                              <Button mnemonicParsing="false" onAction="#clickEliminarColab" prefHeight="50.0" prefWidth="130.0" text="ELIMINAR" />
+                           </children>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </HBox>
+                        <TextField fx:id="tfBusquedaColaboradores" layoutX="11.0" layoutY="7.0" prefHeight="50.0" prefWidth="460.0" styleClass="textfield" />
+                        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutY="65.0" prefHeight="895.0" prefWidth="1920.0">
+                           <content>
+                              <TableView fx:id="tablaColaboradores" prefHeight="960.0" prefWidth="1920.0" style="-fx-background-color: #DDD8C7;">
+                                <columns>
+                                  <TableColumn fx:id="numeroPersonal" editable="false" prefWidth="144.6666717529297" text="NUM. PERSONAL" />
+                                  <TableColumn fx:id="nombreColaborador" editable="false" prefWidth="163.66668701171875" text="NOMBRE" />
+                                    <TableColumn fx:id="apellidoPaterno" editable="false" prefWidth="190.33331298828125" text="APELLIDO PATERNO" />
+                                    <TableColumn fx:id="apellidoMaterno" editable="false" prefWidth="179.0" text="APELLIDO MATERNO" />
+                                    <TableColumn fx:id="CURP" editable="false" minWidth="0.0" prefWidth="188.0" text="CURP" />
+                                    <TableColumn fx:id="correoElectronico" editable="false" minWidth="0.0" prefWidth="179.666748046875" text="CORREO ELECTRONICO" />
+                                    <TableColumn fx:id="rol" editable="false" minWidth="1.66668701171875" prefWidth="122.6666259765625" text="ROL" />
+                                    <TableColumn fx:id="sucursal" editable="false" prefWidth="164.6666259765625" text="SUCURSAL" />
+                                    <TableColumn fx:id="numeroLicencia" editable="false" prefWidth="309.0" text="LICENCIA DE CONDUCIR" />
+                                    <TableColumn fx:id="activo" editable="false" prefWidth="273.0" sortable="false" text="ESTADO" />
+                                </columns>
+                              </TableView>
+                           </content>
+                        </ScrollPane>
+                        <HBox alignment="CENTER_RIGHT" layoutX="1152.0" layoutY="2.0" prefHeight="60.0" prefWidth="771.0" spacing="20.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#clickCambiarEstadoColab" prefHeight="50.0" text="CAMBIAR ESTADO" />
+                              <Button mnemonicParsing="false" onAction="#clickAñadirColab" prefHeight="50.0" prefWidth="250.0" text="AÑADIR COLABORADOR">
+                                 <graphic>
+                                    <Label styleClass="texto-icono-white" text="+" textAlignment="CENTER" textOverrun="CLIP">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </graphic>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets left="20.0" right="20.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab onSelectionChanged="#cambioTabUnidades" text="UNIDADES">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="pane">
+                     <children>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #DDD8C7;" styleClass="pane">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" layoutX="471.0" layoutY="2.0" prefHeight="60.0" prefWidth="476.0" spacing="20.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#clickBuscarUnidad" prefHeight="50.0" prefWidth="130.0" text="BUSCAR" />
+                                    <Button mnemonicParsing="false" onAction="#clickEditarUnidad" prefHeight="50.0" prefWidth="130.0" text="EDITAR" />
+                                    <Button mnemonicParsing="false" onAction="#clickEliminarUnidad" prefHeight="50.0" prefWidth="130.0" text="ELIMINAR" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
+                              </HBox>
+                              <TextField fx:id="tfBusquedaUnidades" layoutX="11.0" layoutY="7.0" prefHeight="50.0" prefWidth="460.0" styleClass="textfield" />
+                              <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutY="65.0" prefHeight="895.0" prefWidth="1920.0">
+                                 <content>
+                                    <TableView fx:id="tablaUnidades" prefHeight="960.0" prefWidth="1920.0" style="-fx-background-color: #DDD8C7;">
+                                       <columns>
+                                          <TableColumn fx:id="idInterno" editable="false" prefWidth="209.0" text="ID" />
+                                          <TableColumn fx:id="VIN" editable="false" prefWidth="374.0" text="VIN" />
+                                          <TableColumn fx:id="marca" editable="false" prefWidth="187.0" text="MARCA" />
+                                          <TableColumn fx:id="modelo" editable="false" prefWidth="219.0" text="MODELO" />
+                                          <TableColumn fx:id="año" editable="false" minWidth="0.0" prefWidth="110.0" text="AÑO" />
+                                          <TableColumn fx:id="propulsion" editable="false" minWidth="0.0" prefWidth="234.0" text="TIPO DE PROPULSION" />
+                                          <TableColumn fx:id="estadoUnidad" editable="false" minWidth="1.66668701171875" prefWidth="189.0" text="ESTADO" />
+                                          <TableColumn fx:id="conductorDesignado" editable="false" prefWidth="395.0" text="CONDUCTOR ASIGNADO" />
+                                       </columns>
+                                    </TableView>
+                                 </content>
+                              </ScrollPane>
+                              <HBox alignment="CENTER_RIGHT" layoutX="1028.0" layoutY="2.0" prefHeight="60.0" prefWidth="895.0" spacing="20.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#clickDesasignarConductor" prefHeight="50.0" text="DESASIGNAR CONDUCTOR" />
+                                    <Button mnemonicParsing="false" onAction="#clickAsignarConductor" prefHeight="50.0" text="ASIGNAR CONDUCTOR" />
+                                    <Button mnemonicParsing="false" onAction="#clickAñadirUnidad" prefHeight="50.0" prefWidth="250.0" text="AÑADIR UNIDAD">
+                                       <graphic>
+                                          <Label styleClass="texto-icono-white" text="+" textAlignment="CENTER" textOverrun="CLIP">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                                 <padding>
+                                    <Insets left="20.0" right="20.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab onSelectionChanged="#cambioTabSucursales" text="SUCURSALES">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="pane">
+                     <children>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #DDD8C7;" styleClass="pane">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" layoutX="471.0" layoutY="2.0" prefHeight="60.0" prefWidth="476.0" spacing="20.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#clickBuscarSucursal" prefHeight="50.0" prefWidth="130.0" text="BUSCAR" />
+                                    <Button mnemonicParsing="false" onAction="#clickEditarSucursal" prefHeight="50.0" prefWidth="130.0" text="EDITAR" />
+                                    <Button mnemonicParsing="false" onAction="#clickEliminarSucursal" prefHeight="50.0" prefWidth="130.0" text="ELIMINAR" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
+                              </HBox>
+                              <TextField fx:id="tfBusquedaSucursales" layoutX="11.0" layoutY="7.0" prefHeight="50.0" prefWidth="460.0" styleClass="textfield" />
+                              <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutY="65.0" prefHeight="895.0" prefWidth="1920.0">
+                                 <content>
+                                    <TableView fx:id="tablaSucursales" prefHeight="960.0" prefWidth="1920.0" style="-fx-background-color: #DDD8C7;">
+                                       <columns>
+                                          <TableColumn fx:id="idSucursal" editable="false" prefWidth="144.6666717529297" text="ID" />
+                                          <TableColumn fx:id="nombreSucursal" editable="false" prefWidth="163.66668701171875" text="NOMBRE" />
+                                          <TableColumn fx:id="estadoSucursal" editable="false" prefWidth="190.33331298828125" text="ESTATUS ACTUAL" />
+                                          <TableColumn fx:id="pais" editable="false" prefWidth="179.0" text="PAIS" />
+                                          <TableColumn fx:id="codigoPostal" editable="false" minWidth="0.0" prefWidth="188.0" text="CODIGO POSTAL" />
+                                          <TableColumn fx:id="calle" editable="false" minWidth="0.0" prefWidth="179.666748046875" text="CALLE" />
+                                          <TableColumn fx:id="numero" editable="false" minWidth="1.66668701171875" prefWidth="122.6666259765625" text="NUMERO" />
+                                          <TableColumn fx:id="colonia" editable="false" prefWidth="249.0" text="COLONIA" />
+                                          <TableColumn fx:id="ciudad" editable="false" prefWidth="225.0" text="CIUDAD" />
+                                          <TableColumn fx:id="estado" editable="false" prefWidth="273.0" sortable="false" text="ESTADO" />
+                                       </columns>
+                                    </TableView>
+                                 </content>
+                              </ScrollPane>
+                              <HBox alignment="CENTER_RIGHT" layoutX="1275.0" layoutY="2.0" prefHeight="60.0" prefWidth="648.0" spacing="20.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#clickDarDeBajaSucursal" prefHeight="50.0" prefWidth="173.0" text="DAR DE BAJA" />
+                                    <Button mnemonicParsing="false" onAction="#clickAñadirSucursal" prefHeight="50.0" prefWidth="250.0" text="AÑADIR SUCURSAL">
+                                       <graphic>
+                                          <Label styleClass="texto-icono-white" text="+" textAlignment="CENTER" textOverrun="CLIP">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                                 <padding>
+                                    <Insets left="20.0" right="20.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab onSelectionChanged="#cambioTabEnvios" text="ENVIOS">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="pane">
+                     <children>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #DDD8C7;" styleClass="pane">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" layoutX="471.0" layoutY="2.0" prefHeight="60.0" prefWidth="476.0" spacing="20.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#clickBuscarEnvio" prefHeight="50.0" prefWidth="130.0" text="BUSCAR" />
+                                    <Button mnemonicParsing="false" onAction="#clickEditarEnvio" prefHeight="50.0" prefWidth="130.0" text="EDITAR" />
+                                    <Button mnemonicParsing="false" onAction="#clickEliminarEnvio" prefHeight="50.0" prefWidth="130.0" text="ELIMINAR" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
+                              </HBox>
+                              <TextField fx:id="tfBusquedaEnvios" layoutX="11.0" layoutY="7.0" prefHeight="50.0" prefWidth="460.0" styleClass="textfield" />
+                              <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutY="65.0" prefHeight="895.0" prefWidth="1920.0">
+                                 <content>
+                                    <TableView fx:id="tablaEnvios" prefHeight="960.0" prefWidth="1920.0" style="-fx-background-color: #DDD8C7;">
+                                       <columns>
+                                          <TableColumn fx:id="numeroGuia" editable="false" prefWidth="144.6666717529297" text="NUM. GUIA" />
+                                          <TableColumn fx:id="correoElectronicoCliente" editable="false" prefWidth="163.66668701171875" text="EMAIL CLIENTE" />
+                                          <TableColumn fx:id="nombreRecibe" editable="false" prefWidth="231.0" text="NOMBRE DESTINATARIO" />
+                                          <TableColumn fx:id="sucursalOrigen" editable="false" prefWidth="291.0" text="SUCURSAL ORIGEN" />
+                                          <TableColumn fx:id="destino" editable="false" minWidth="0.0" prefWidth="362.0" text="DESTINO" />
+                                          <TableColumn fx:id="costo" editable="false" minWidth="0.0" prefWidth="196.0" text="COSTO" />
+                                          <TableColumn fx:id="estadoEnvio" editable="false" minWidth="1.66668701171875" prefWidth="152.0" text="ESTATUS DEL ENVIO" />
+                                          <TableColumn fx:id="colaboradorIdRef" editable="false" prefWidth="376.0" text="CONDUCTOR RESPONSABLE" />
+                                       </columns>
+                                    </TableView>
+                                 </content>
+                              </ScrollPane>
+                              <HBox alignment="CENTER_RIGHT" layoutX="1632.0" layoutY="2.0" prefHeight="60.0" prefWidth="291.0" spacing="20.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#clickAñadirEnvio" prefHeight="50.0" prefWidth="250.0" text="AÑADIR ENVIO">
+                                       <graphic>
+                                          <Label styleClass="texto-icono-white" text="+" textAlignment="CENTER" textOverrun="CLIP">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                                 <padding>
+                                    <Insets left="20.0" right="20.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab onSelectionChanged="#cambioTabClientes" text="CLIENTES">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="pane">
+                     <children>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #DDD8C7;" styleClass="pane">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" layoutX="471.0" layoutY="2.0" prefHeight="60.0" prefWidth="476.0" spacing="20.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#clickBuscarCliente" prefHeight="50.0" prefWidth="130.0" text="BUSCAR" />
+                                    <Button mnemonicParsing="false" onAction="#clickEditarCliente" prefHeight="50.0" prefWidth="130.0" text="EDITAR" />
+                                    <Button mnemonicParsing="false" onAction="#clickEliminarCliente" prefHeight="50.0" prefWidth="130.0" text="ELIMINAR" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
+                              </HBox>
+                              <TextField fx:id="tfBusquedaClientes" layoutX="11.0" layoutY="7.0" prefHeight="50.0" prefWidth="460.0" styleClass="textfield" />
+                              <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutY="65.0" prefHeight="895.0" prefWidth="1920.0">
+                                 <content>
+                                    <TableView fx:id="tablaClientes" prefHeight="960.0" prefWidth="1920.0" style="-fx-background-color: #DDD8C7;">
+                                       <columns>
+                                          <TableColumn fx:id="emailCliente" editable="false" prefWidth="234.0" text="EMAIL" />
+                                          <TableColumn fx:id="nombreCliente" editable="false" prefWidth="134.0" text="NOMBRE" />
+                                          <TableColumn fx:id="apellidoPaternoCliente" editable="false" prefWidth="213.0" text="APELLIDO PATERNO" />
+                                          <TableColumn fx:id="apellidoMaternoCliente" editable="false" prefWidth="230.0" text="APELLIDO MATERNO" />
+                                          <TableColumn fx:id="telefonoCliente" editable="false" minWidth="0.0" prefWidth="140.00006103515625" text="TELEFONO" />
+                                          <TableColumn fx:id="calleCliente" editable="false" minWidth="0.0" prefWidth="276.0" text="CALLE" />
+                                          <TableColumn fx:id="numeroCliente" editable="false" minWidth="0.0" prefWidth="99.0" text="NUMERO" />
+                                          <TableColumn fx:id="coloniaCliente" editable="false" minWidth="1.66668701171875" prefWidth="406.3333740234375" text="COLONIA" />
+                                          <TableColumn fx:id="codigoPostalCliente" editable="false" prefWidth="184.3333740234375" text="CODIGO POSTAL" />
+                                       </columns>
+                                    </TableView>
+                                 </content>
+                              </ScrollPane>
+                              <HBox alignment="CENTER_RIGHT" layoutX="1632.0" layoutY="2.0" prefHeight="60.0" prefWidth="291.0" spacing="20.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#clickAñadirCliente" prefHeight="50.0" prefWidth="250.0" text="AÑADIR CLIENTE">
+                                       <graphic>
+                                          <Label styleClass="texto-icono-white" text="+" textAlignment="CENTER" textOverrun="CLIP">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                                 <padding>
+                                    <Insets left="20.0" right="20.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <HBox alignment="CENTER_RIGHT" prefHeight="80.0" prefWidth="1920.0" spacing="20.0">
+         <children>
+            <VBox alignment="CENTER_RIGHT" prefHeight="50.0">
+               <children>
+                  <Label fx:id="lbNombreColaborador" styleClass="t2" text="Colaborador" />
+                  <Label styleClass="enfasis" text="Administrador" />
+               </children>
+            </VBox>
+            <Button mnemonicParsing="false" onAction="#clickCerrarSesion" text="CERRAR SESION">
+               <graphic>
+                  <ImageView fitHeight="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@recursos/Logout_White.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="20.0" right="20.0" />
+         </padding></HBox>
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="17.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@recursos/PW.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="95.0" layoutY="45.0" styleClass="t2" text="Sistema de Gestion Logistica de Envios" />
+      <Label layoutX="93.0" layoutY="2.0" styleClass="t1" text="PACKET WORLD" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo_packet_world.css">
+
+    <title>RASTREO</title>
+</head>
+
+<body style="background-color: #C7C2AC">
+    <div>
+        <img src="img/PacketWorld.png" class="logoPWHome" >
+    </div>
+    <section class="contenedor">
+        <h2 class="">ENVIO </h2>
+        <div id="informacion-personal" class="informacion">
+            <p>
+
+            </p>
+        </div>
+    </section>
+
+    <section class="paquetes">
+        <h2 class="paquetes-titulo">Paquetes</h2>
+        <table id="infoPaquete" class="table">
+            <thead class="table-primary">
+                <tr>
+                    <th>Descripción</th>
+                    <th>Alto (mm)</th>
+                    <th>Ancho (mm)</th>
+                    <th>Profundidad (mm)</th>
+                    <th>Peso (kg)</th>
+                </tr>
+            </thead>
+            <tbody id="tbodyPaquetes">
+                
+            </tbody>
+        </table>
+    </section>
+
+    
+    <section class="historial">
+        <h2 class="historial-titulo">Historial de Cambios</h2>
+        <table id="historialCambios" class="table">
+            <thead class="table-primary">
+                <tr>
+                    <th>Colaborador</th>
+                    <th>Comentario</th>
+                    <th>Estado</th>
+                    <th>Fecha del Cambio</th>
+                </tr>
+            </thead>
+            <tbody id="tbodyCambios">
+                
+            </tbody>
+        </table>
+    </section>
+    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const params = new URLSearchParams(window.location.search);
+            const numeroGuia = params.get('numeroGuia');
+            if (numeroGuia) {
+                obtenerEnvios(numeroGuia);
+            } else {
+                console.log('Sin numero de guia')
+            }
+
+        });
+    </script>
+</body>
+
+</html>

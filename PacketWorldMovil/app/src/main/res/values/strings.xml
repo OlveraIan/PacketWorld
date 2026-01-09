@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PacketWorldMovil</string>
+    <string name="login_button_text">Iniciar Sesion</string>
+    <string name="personal_number_label">Numero Personal</string>
+    <string name="password_label">Contraseña</string>
+    <string name="app_logo_description">Packet World</string>
+</resources>
