@@ -336,3 +336,190 @@ Cuando el envio es cancelado se maneja de distinta forma dependiendo de quien ha
 Cuando un cliente decide cancelar su envio tiene que hacerlo a traves del ejecutivo de la tienda. En este caso el log finaliza abrubtamente en la decision hasta donde quedo. Por ejemplo, si el envio estaba en transito, la siguiente entrada en el log sera el de estado cancelado y no se podra modificar.
 Un conductor puede decidir cancelar el envio si considera que es imposible realizar el envio (cuando es peligroso o la direccion no existe ya), o si ha sido autorizado a cancelarlo (quizas despues de varios intentos fallidos). Cuando esto pasa el log finaliza abruptamente hasta donde quedo, ahora con el estado de cancelado y sin poder modificarse nuevamente. La ultima entrada que aparecera en el log es la cancelacion
 
+# Anexo
+## Problemática
+La empresa “Packet-World” líder en el ramo de envíos por paquetería necesita una solución
+que permita la gestión completa de envíos de paquetes desde una aplicación de escritorio,
+con monitoreo y visualización desde una aplicación web y desde una aplicación móvil para
+conductores.
+
+## Descripción de casos de uso
+### Actor: Administrador
+
+**CU-ADM-01 Registrar colaborador**  
+Propósito: Dar de alta un colaborador en el sistema.  
+Precondiciones: El administrador está autenticado. El rol existe.  
+Flujo principal:
+
+1. El administrador captura los datos del colaborador.
+    
+2. El sistema valida campos obligatorios, unicidad de CURP y licencia.
+    
+3. El sistema registra al colaborador activo.  
+    Resultado: Colaborador registrado y disponible para operación.  
+    Excepciones: CURP o correo duplicado, rol inválido.
+    
+
+---
+
+**CU-ADM-02 Editar colaborador**  
+Propósito: Actualizar datos de un colaborador existente.  
+Precondiciones: El colaborador existe.  
+Flujo principal:
+
+1. El administrador selecciona un colaborador.
+    
+2. Modifica datos permitidos.
+    
+3. El sistema valida reglas de rol/licencia.  
+    Resultado: Datos actualizados.  
+    Excepciones: Intento de asignar licencia a un rol no conductor.
+    
+
+---
+
+**CU-ADM-03 Desactivar colaborador**  
+Propósito: Evitar que un colaborador siga operando sin borrar historial.  
+Precondiciones: Colaborador existente.  
+Resultado: Colaborador marcado como inactivo.
+
+---
+
+**CU-ADM-04 Eliminar colaborador**  
+Propósito: Eliminar físicamente un colaborador cuando el cliente lo exige.  
+Precondiciones: Colaborador existente.  
+Resultado: Datos eliminados o anonimizados manteniendo integridad histórica.
+
+---
+
+**CU-ADM-05 Registrar unidad**  
+Propósito: Registrar una nueva unidad vehicular.  
+Precondiciones: VIN único.  
+Flujo principal:
+
+1. Administrador captura datos de la unidad.
+    
+2. El sistema genera idInterno.
+    
+3. Se asigna estado “Activo”.
+    
+4. Se genera LogUnidad inicial.  
+    Resultado: Unidad disponible para asignación.
+    
+
+---
+
+**CU-ADM-06 Editar unidad**  
+Propósito: Modificar datos de una unidad activa.  
+Restricción: No aplica a unidades en baja definitiva.  
+Resultado: Datos actualizados y log registrado.
+
+---
+
+**CU-ADM-07 Cambiar estado de unidad**  
+Propósito: Cambiar el estado operativo de una unidad.  
+Resultado: Estado actualizado y registro histórico generado.
+
+---
+
+### Actor: Ejecutivo de tienda
+
+**CU-EJT-01 Crear envío**  
+Propósito: Registrar un nuevo envío en el sistema.  
+Precondiciones: Cliente existente.  
+Flujo principal:
+
+1. Ejecutivo captura datos del envío.
+    
+2. El sistema crea la dirección destino.
+    
+3. Se asigna estado inicial (“Recibido en sucursal” o “Detenido”).
+    
+4. Se genera número de guía.
+    
+5. Se crea log inicial.  
+    Resultado: Envío creado.  
+    Excepciones: Cliente inexistente, datos incompletos.
+    
+
+---
+
+**CU-EJT-02 Agregar paquetes a envío**  
+Propósito: Asociar paquetes físicos al envío.  
+Precondiciones: Envío no finalizado.  
+Resultado: Paquetes registrados correctamente.
+
+---
+
+**CU-EJT-03 Actualizar envío**  
+Propósito: Modificar datos logísticos del envío.  
+Restricciones:
+
+- No se puede modificar si está Entregado o Cancelado.
+    
+- No se cambia conductor ni cliente.  
+    Resultado: Dirección y costo actualizados.
+    
+
+---
+
+**CU-EJT-04 Cambiar estado del envío**  
+Propósito: Gestionar el avance del envío.  
+Resultado: Estado actualizado y log generado.
+
+---
+
+**CU-EJT-05 Cancelar envío**  
+Propósito: Cancelar un envío por solicitud del cliente.  
+Resultado: Envío cancelado y bloqueado para cambios.
+
+---
+
+### Actor: Conductor
+
+**CU-CON-01 Ver envíos asignados**  
+Propósito: Consultar envíos a su cargo.  
+Restricciones:
+
+- No se muestran entregados.
+    
+- Cancelados solo hasta 7 días.  
+    Resultado: Lista de envíos operativos.
+    
+
+---
+
+**CU-CON-02 Ver detalle del envío**  
+Propósito: Consultar información completa para entrega.  
+Resultado: Detalle del envío, paquetes y contacto del cliente.
+
+---
+
+**CU-CON-03 Cambiar estado del envío en ruta**  
+Propósito: Reportar avance o problemas del envío.  
+Restricciones:
+
+- Solo ciertos estados permitidos.  
+    Resultado: Estado actualizado y log registrado.
+    
+
+---
+
+**CU-CON-04 Cancelar envío**  
+Propósito: Cancelar un envío cuando es imposible entregarlo.  
+Resultado: Envío cancelado definitivamente.
+
+---
+### Actor: Cliente
+
+**CU-CLI-01 Consultar rastreo de envío**  
+Propósito: Conocer el estado del envío.  
+Precondiciones: Tener el número de guía.  
+Flujo principal:
+
+1. Cliente ingresa número de guía.
+    
+2. El sistema muestra estado actual, costo, paquetes e historial.  
+    Resultado: Información de rastreo visible.  
+    Restricciones: No requiere autenticación.
+
