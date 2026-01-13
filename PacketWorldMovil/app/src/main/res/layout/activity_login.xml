@@ -1,130 +1,111 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-    <data>
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="PACKET WORLD::LOGIN"
+        android:textSize="20sp"
+        android:shadowColor="@color/DarkDefault"
+        android:shadowDx="-4"
+        android:shadowDy="3"
+        android:shadowRadius="3.0"
 
-    </data>
+        />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="20dp"
-        tools:context=".LoginActivity">
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:padding="29dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/LightFg"
+        android:src="@drawable/packetworld_hd"
+        android:elevation="2dp"
+        />
 
-        <!-- Logo de la aplicación -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="30dp"
+        android:text="NUMERO DE PERSONAL"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:shadowColor="@color/DarkDefault"
+        android:shadowDx="-3"
+        android:shadowDy="2"
+        android:shadowRadius="3.0"
+        />
 
-        <ImageView
-            android:id="@+id/imageViewLogo"
-            android:layout_width="161dp"
-            android:layout_height="121dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="40dp"
-            android:src="@mipmap/ic_packet_world"
-            android:contentDescription="@string/app_logo_description"
-            app:layout_constraintBottom_toTopOf="@+id/textInputLayoutUsuario"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <EditText
+        android:id="@+id/et_NumeroPersonal"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/estilo_edit_text"
+        android:hint="S21018123"
+        android:maxLength="20"
+        android:elevation="2dp"
+        />
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="118dp"
-            android:layout_height="121dp"
-            android:layout_centerInParent="true"
-            android:layout_marginBottom="64dp"
-            android:indeterminate="true"
-            android:visibility="gone"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="30dp"
+        android:text="CONTRASEÑA"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:shadowColor="@color/DarkDefault"
+        android:shadowDx="-3"
+        android:shadowDy="2"
+        android:shadowRadius="3.0"
 
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.464"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        />
 
-        <!-- Campo de texto para Usuario -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayoutUsuario"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint=""
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imageViewLogo">
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/estilo_edit_text"
+        android:hint="*************"
+        android:inputType="textPassword"
+        android:maxLength="25"
+        android:elevation="2dp"
+        />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_numero_personal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:padding="16dp"
-                android:textColor="@android:color/black"
-                android:textColorHint="@android:color/darker_gray" />
-        </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="29dp"
+        android:text="INICIAR SESION"
+        />
 
-        <!-- Campo de texto para Contraseña -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayoutContrasena"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
-            android:hint=""
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textInputLayoutUsuario">
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/DarkDefault"
+        android:visibility="invisible"
+        />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_contrasena"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:padding="16dp"
-                android:textColorHint="@android:color/darker_gray"
-                android:textColor="@android:color/black" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Botón de Login -->
-
-        <Button
-            android:id="@+id/btn_ingresar"
-            android:layout_width="176dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="64dp"
-            android:backgroundTint="@color/white"
-            android:text="@string/login_button_text"
-            android:textColor="#000"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textInputLayoutContrasena"
-            app:layout_constraintVertical_bias="0.145" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/personal_number_label"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.33" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="336dp"
-            android:text="@string/password_label"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.973" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>
+</LinearLayout>

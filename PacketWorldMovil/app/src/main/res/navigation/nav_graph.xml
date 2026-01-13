@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/enviosFragment">
+    <fragment
+        android:id="@+id/enviosFragment"
+        android:name="uv.tc.packetworld.EnviosFragment"
+        android:label="Envíos">
+
+        <action
+            android:id="@+id/action_enviosFragment_to_detalleEnvioFragment"
+            app:destination="@id/detalleEnvioFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detalleEnvioFragment"
+        android:name="uv.tc.packetworld.DetalleEnvioFragment"
+        android:label="Detalle envío">
+
+        <argument
+            android:name="envioId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_detalleEnvioFragment_to_paquetesFragment"
+            app:destination="@id/paquetesFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/paquetesFragment"
+        android:name="uv.tc.packetworld.PaquetesFragment"
+        android:label="Detalle envío">
+
+        <argument
+            android:name="numeroGuia"
+            app:argType="string" />
+    </fragment>
+
+</navigation>
